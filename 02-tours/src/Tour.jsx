@@ -1,4 +1,4 @@
-const Tour = ({ id, info, name, image, price }) => {
+const Tour = ({ id, info, name, image, price, removeTour }) => {
   return (
     <article className="single-tour">
       <img src={image} alt={name} className="img" />
@@ -6,6 +6,13 @@ const Tour = ({ id, info, name, image, price }) => {
       <div className="tour-info">
         <h5>{name}</h5>
         <p>{info}</p>
+        <button
+          type="button"
+          className="btn btn-block delete-btn"
+          onClick={() => removeTour(id)}
+        >
+          not interested
+        </button>
       </div>
     </article>
   );
