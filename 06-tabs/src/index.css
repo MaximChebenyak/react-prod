@@ -331,9 +331,9 @@ ul {
   .job-btn {
     margin-bottom: 1rem;
   }
-  .job-btn:hover {
+  /*   .job-btn:hover {
     box-shadow: -2px 0px var(--primary-500);
-  }
+  } */
   .active-btn {
     box-shadow: -2px 0px var(--primary-500);
   }
