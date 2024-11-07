@@ -7,14 +7,20 @@ const App = () => {
   const { name, job, image, text } = people[index];
 
   const nextPerson = () => {
-    setIndex((oldIndex) => {
-      const newIndex = oldIndex + 1;
-      return newIndex;
-    });
+    setIndex((oldIndex) => (oldIndex + 1) % people.length);
   };
 
-  const prevPerson = () => {};
+  const prevPerson = () => {
+    setIndex((oldIndex) => (oldIndex - 1 + people.length) % people.length);
+  };
 
+  const randomPerson = () => {
+    let randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * people.length);
+    } while (randomNumber === index);
+    setIndex(randomNumber);
+  };
   return (
     <main>
       <article className="review">
@@ -35,6 +41,13 @@ const App = () => {
             <FaChevronRight />
           </button>
         </div>
+        <button
+          type="button"
+          className="btn btn-hipster"
+          onClick={randomPerson}
+        >
+          random
+        </button>
       </article>
     </main>
   );
