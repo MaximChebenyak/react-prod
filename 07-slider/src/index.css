@@ -363,3 +363,6 @@ ul {
 .slick-next::before {
   color: var(--primary-500) !important;
 }
+.next-slide {
+  transform: translateX(100%);
+}
